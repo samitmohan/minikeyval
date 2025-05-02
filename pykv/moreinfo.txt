@@ -1,0 +1,27 @@
+## How minikeyvalue differs from Redis
+
+1. **Storage approach**:
+   - Redis is primarily in-memory with optional persistence
+   - Minikeyvalue focuses on file storage distributed across volume servers
+2. **Value size optimization**:
+   - Redis works best with smaller values (bytes to KBs)
+   - Minikeyvalue is designed for 1MB-1GB values (like files)
+3. **Architecture**:
+   - Redis is a single-process server (with cluster mode for scaling)
+   - Minikeyvalue separates routing (master) from storage (volume servers)
+4. **Feature set**:
+   - Redis has rich data structures (lists, sets, sorted sets, etc.)
+   - Minikeyvalue provides only basic key-value operations
+5. **Use case focus**:
+   - Redis: Fast in-memory database and caching
+   - Minikeyvalue: Distributed file storage with simple API
+
+**Start with a simple HTTP server**: Use FastAPI or aiohttp for an async HTTP server that will handle your API endpoints.
+
+**Implement core operations first**: Focus on GET/PUT/DELETE before adding more complex features.
+
+**Consider storage carefully**: For values 1MB-1GB, direct file storage with efficient indexing is crucial.
+
+**Use async Python**: Python's asyncio will help you handle many concurrent connections efficiently.
+
+**Separate concerns**: Follow minikeyvalue's approach of separating metadata handling from actual data storage.

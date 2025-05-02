@@ -98,6 +98,7 @@ PyKV uses a two-tier architecture:
 
 ## Project Structure
 
+```
 pykv/
 ├── pykv/
 │ ├── **init**.py # Package initialization
@@ -136,7 +137,7 @@ pykv/
 │
 ├── setup.py # Package setup
 └── README.md # Project documentation
-
+```
 Module Responsibilities
 Common Components
 
@@ -264,6 +265,7 @@ Considerations for Implementation
 - Chunking: Consider content-based chunking for partial deduplication of large files with small differences
 - Compression: Apply compression before deduplication for better space savings
 
+```
   pykv/
   ├── pykv/
   │ ├── common/
@@ -272,3 +274,4 @@ Considerations for Implementation
   │ │ └── storage.py # Content-addressable storage
   │ └── master/
   │ └── dedup_stats.py # Deduplication statistics
+```
